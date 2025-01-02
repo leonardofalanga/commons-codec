@@ -144,6 +144,8 @@ public final class MurmurHash2 {
         case 1:
             h ^= data[index] & 0xff;
             h *= M32;
+            break;
+         default: //nothing
         }
 
         // Do a few final mixes of the hash to ensure the last few
