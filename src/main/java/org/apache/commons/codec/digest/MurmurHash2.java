@@ -262,6 +262,8 @@ public final class MurmurHash2 {
         case 1:
             h ^= (long) data[index] & 0xff;
             h *= M64;
+            break;
+        default: //nothing
         }
 
         h ^= h >>> R64;

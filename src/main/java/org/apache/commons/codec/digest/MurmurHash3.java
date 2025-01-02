@@ -110,6 +110,9 @@ public final class MurmurHash3 {
                 k1 = Integer.rotateLeft(k1, R1_32);
                 k1 *= C2_32;
                 result ^= k1;
+                break;
+            default:
+                    // No action
             }
 
             // finalization
