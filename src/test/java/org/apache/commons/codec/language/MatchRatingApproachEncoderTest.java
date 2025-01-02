@@ -514,7 +514,7 @@ final void testVowelAndPunctuationOnly() {
     }
 
 @Test
-final void testVowelOnly() {
+ final void testVowelOnly() {
         assertEquals(getStringEncoder().encode("aeiouAEIOU"), "A");
     }
 }
