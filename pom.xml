@@ -168,7 +168,7 @@ limitations under the License.
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <resourceExcludes>NOTICE.txt,LICENSE.txt,**/pom.properties,**/sha512.properties</resourceExcludes>
           </configuration>
-        </plugin>        
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -262,8 +262,8 @@ limitations under the License.
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>9</source>
-          <target>9</target>
+          <source>8</source>
+          <target>8</target>
         </configuration>
       </plugin>
     </plugins>
@@ -343,7 +343,7 @@ limitations under the License.
         <commons.jacoco.methodRatio>0.88</commons.jacoco.methodRatio>
         <commons.jacoco.branchRatio>0.92</commons.jacoco.branchRatio>
         <commons.jacoco.complexityRatio>0.88</commons.jacoco.complexityRatio>
-        <commons.jacoco.lineRatio>0.94</commons.jacoco.lineRatio>    
+        <commons.jacoco.lineRatio>0.94</commons.jacoco.lineRatio>
       </properties>
     </profile>
     <profile>
@@ -402,7 +402,7 @@ limitations under the License.
       <email>ggregory at apache.org</email>
       <url>https://www.garygregory.com</url>
       <organization>The Apache Software Foundation</organization>
-      <organizationUrl>https://www.apache.org/</organizationUrl>      
+      <organizationUrl>https://www.apache.org/</organizationUrl>
       <roles>
         <role>PMC Member</role>
       </roles>

@@ -55,8 +55,10 @@ public class ExampleDocker {
     static class HtmlHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+            System.out.println(System.getProperty("user.dir"));
             // Leggi il file HTML da disco
-            final String htmlContent = readHtmlFile("index.html");
+            String htlmPath = System.getProperty("user.dir") + "/Users/leonardofalanga/Downloads/commons-codec/src/main/java/org/apache/commons/codec/exampleDocker";
+            final String htmlContent = readHtmlFile("/Users/leonardofalanga/Downloads/commons-codec/src/main/java/org/apache/commons/codec/exampleDocker/index.html");
 
             // Imposta le intestazioni della risposta
             exchange.getResponseHeaders().add("Content-Type", "text/html");
@@ -71,15 +73,18 @@ public class ExampleDocker {
         // Funzione per leggere il contenuto del file HTML
         private String readHtmlFile(String fileName) throws IOException {
             final BufferedReader reader = new BufferedReader(new FileReader(fileName));
-            final StringBuilder htmlContent = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                htmlContent.append(line).append("\n");
-            }
-            reader.close();
+                final StringBuilder htmlContent = new StringBuilder();
+                System.out.println("test");
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    htmlContent.append(line).append("\n");
+                }
+                reader.close();
             return htmlContent.toString();
+
         }
     }
+
 
     // Handler per la POST su /encode per la codifica
     static class EncodeHandler implements HttpHandler {
