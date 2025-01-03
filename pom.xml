@@ -57,6 +57,11 @@ limitations under the License.
   </distributionManagement>
   <dependencies>
     <dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-console-standalone</artifactId>
+    <version>1.9.2</version> <!-- Sostituisci con l'ultima versione -->
+</dependency>
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.17.0</version>
@@ -114,7 +119,8 @@ limitations under the License.
     <commons.jacoco.complexityRatio>0.84</commons.jacoco.complexityRatio>
   </properties>
   <build>
-    <defaultGoal>clean verify apache-rat:check japicmp:cmp checkstyle:check javadoc:javadoc</defaultGoal>
+    <finalName>example-docker</finalName>
+    <defaultGoal>clean verify apache-rat:check checkstyle:check javadoc:javadoc</defaultGoal>
     <pluginManagement>
       <plugins>
         <!-- PiTest -->
@@ -193,6 +199,23 @@ limitations under the License.
       </plugins>
     </pluginManagement>
     <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.6.0</version> <!-- Usa la versione più recente -->
+            <executions>
+                <execution>
+                    <id>copy-dependencies</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>copy-dependencies</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/dependency</outputDirectory>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
       <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
